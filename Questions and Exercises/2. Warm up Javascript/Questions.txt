@@ -1,0 +1,213 @@
+1. What will be the output of the following code?
+
+let x = 42;
+if (true) {
+console.log(x);
+let x = 1337;
+}
+ans: ReferenceError: x is not defined
+Solution Description
+Variables defined with let are available only in the nearest enclosing block.
+
+2. Global Scoping
+Send Feedback
+Guess the Output:
+const KEY = 'coding_ninjas';
+if (true) {
+    const KEY = 'ES6';
+}
+console.log(KEY);
+ans: coding_ninjas.
+Solution Description
+This declaration creates a constant whose scope can be either global or local to the block in which it is declared. The scope of the inner KEY is only inside the "if" block. That's why the output is 'coding_ninjas.
+
+3. Variable Hoisting
+Send Feedback
+Find the output:
+var temp= 'hello';
+function display(){
+    console.log(temp);
+    var temp = 'bye';
+};
+display();
+
+ans: undefined, inside function scope temp is hoisted, var temp; console.log(temp); which is undefined.
+Solution Description
+This code will not give you an error due to variable hoisting.
+
+4. What is the final value of array below?
+
+var array = [1, 2, 3]
+const array1 = [4, 5, 6]
+var arr1 = array.map(a => a * 2);
+
+array = [...array1, ...arr1]
+
+ans: [4,5,6,2,4,6]
+
+Solution Description
+First, each element of the array is getting multiplied by 2 and then the concatenation of 2 arrays is taking place.
+
+5. Rest Operator
+
+What is the output of the following code?
+function foo(x, ...y) {
+   return x * y.length
+}
+foo(4,1,2,30);
+
+ans: 12 
+
+Solution Description
+Here, ..y is a rest parameter. Rest parameters are used to transform individual elements into an array and rest operators should be written at the end inside the function declaration. So, value 4 is assigned to variable x and the rest (1,2,30) are passed as an array of length 3. So, answer is 12.
+
+6. Find the output of the code below:
+for (var i = 0; i < 5; i++) {
+  setTimeout(function() { console.log(i); }, i * 1000 );
+}
+
+ans: 55555
+
+Solution Description
+The variable i is actually declared within the for loop and the inner function accesses it. So when the for loop is done running, each of the inner functions refers to the same variable i, which at the end of the loop is equal to 5.
+
+7. const colors = [
+      'Red',
+      'Orange',   
+      'Purple',
+      'Brown',
+      'Gray',
+      'Pink'
+    ];
+const [primary, ,secondary,...others] = colors;
+console.log(primary, secondary, others);
+What will be the output?
+
+ans: Red Purple ['Brown', 'Gray', 'Pink']
+Solution Description
+In this destructuring, primary variable is assigned the value ‘Red’ and secondary is assigned the value ‘Purple’ which is the 3rd element of colors array. 2nd element of the array is skipped due to ‘,’ (elision) in between. And since, rest operator is used the remaining elements are extracted in the form of array which is others.
+- Elision lets you use the syntax of Array “holes” to skip elements during destructuring
+- The rest operator lets you extract the remaining elements of an iterable into an Array.
+
+
+8. Array Destructuring and default value.
+
+Choose the correct output.
+const scores = [22, 33]
+const [math, science = 50, arts = 50, sst] = scores
+console.log(math,science,arts,sst);
+
+ans: 22 33 50 undefined;
+
+Solution Description
+Note that Default values provide a fallback if nothing is found in the source. If a part (an object property or an Array element) has no match in the source, it is matched against:
+its default value (if specified; it’s optional)
+undefined (otherwise)
+=> scores array is destructured into variables - math, science, arts and sst but there are only two elements in the array. Therefore, math is assigned scores[0], science is assigned scores[1], arts is assigned the fallback default value of 50, (since, there are no more elements in scores array) and sst is assigned ‘undefined’ by default.
+
+9. Priority List
+Send Feedback
+A student is creating a list of electronics items he wants to buy with decreasing priority(highest priority item at 0 index).
+Electronics=['Mobile', 'Watch', 'Kindle']. 
+But due to college requirements, he wants to keep a certain item as his first priority. Can you add that item at the start to create a new priority list using the spread operator?
+
+ans: function newPriorityList(item) {
+    var Electronics=['Mobile', 'Watch', 'Kindle'];
+    // write your code here
+    var ans = [item, ...Electronics];
+    return ans;
+    
+}
+
+
+// Input and output has already been handled for you
+
+process.stdin.resume();
+process.stdin.setEncoding("utf-8");
+
+let remainder = '';
+process.stdin.on('data', function (chunk) {
+    var ans=newPriorityList(chunk);
+    for(var i=0; i<ans.length; i++)
+    {
+        process.stdout.write(ans[i]+'\n');
+    }
+    process.exit();
+});
+
+
+10. Sum of N Numbers 
+Sum of N numbers
+Send Feedback
+Write a program for printing the sum of given numbers.
+Input :
+
+1 2 3 4
+Output:
+
+10
+
+
+Input:
+
+4 1 3 1 1 1 2
+Output:
+
+13
+
+ans: function sumOfNumbers(...args) {  
+    // write your code here
+    return args.reduce((sum, number)=>sum+number, 0);
+    // here args is a spread operator used to spread the variable input as in iterator whiuch is array in this case
+    
+}
+
+
+// Input and output has already been handled for you
+
+process.stdin.resume();
+process.stdin.setEncoding("utf-8");
+
+let remainder = '';
+process.stdin.on('data', function (chunk) {
+    var arr = [];
+    var a = chunk.toString().split(' '); 
+    for(var i=0; i<a.length; i++)
+    {
+        arr.push(parseInt(a[i]));
+    }
+    ans = sumOfNumbers(...arr);
+    var ans1 = ""+ans;
+    process.stdout.write(ans1);
+    process.exit();
+});
+
+11. This Keyword
+Send Feedback
+var title = "A Passage to India";
+var author = "E.M. Forster";
+
+var novel = {
+   title: "Pride and Prejudice",
+   author: "Jane Austen",
+   print: function() {
+       console.log(this.title);
+       console.log(this.author);
+   }
+}
+
+novel.print();
+What will be the output of the above program?
+1. Uncaught ReferenceError: this is not defined
+Uncaught ReferenceError: this is not defined
+2. A Passage to India
+E.M. Forster
+3. Pride and Prejudice
+Jane Austen
+
+ans: 3
+ 
+Solution Description
+this.title points to the value of the title key inside the object and this.author points to the author key inside the object.
+
+12. 
