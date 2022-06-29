@@ -1,0 +1,44 @@
+1. React is a _____ ?
+ans: javascript library.
+
+Solution Description
+ReactJS is a javascript library for building user interfaces. It's not a framework.
+A library is basically used to solve some common problems, we don't have to write code in Vanilla JS that is pure JS that could be somewhat challenging for people.
+That means, in order to build complete React applications, you will need to choose the packages and tools on your own.
+While Angular is usually considered a framework as it provides strong opinions on how your application should be structured.
+
+2. What are the advantages of using React ?
+ans: 
+1. React has reusable components: Code re-use helps make your apps easier to develop and easier to maintain. They also help you implement a consistent look and feel across the whole project.
+2.  React improves performance due to VDOM.
+
+3. Which terminal command is used to remove the directory?
+ans: rmdir is used to remove a directory.
+
+4. Write a command to move one level up from the current directory?
+ans: cd
+Solution Description
+cd is used to change the directory. It is used to navigate directly to a directory, use cd with the directory’s path as an argument.
+
+5. What is a React in a MVC architecture?
+ans: View. 
+Solution Description
+React is the view part of the MVC framework. It is an open-source javascript library that provides a view for the data rendered as HTML.
+
+6. Which command is used to print the current working directory?
+ans: pwd.
+
+7. Write command to move the directory one level up from the current directory.
+ans: cd ..
+
+8. React.js was orginally created by? 
+ans: Jordan Walke.
+
+9. How is Real DOM different from Virtual DOM?
+ans: 
+Manipulating the real DOM is slow. Manipulating the virtual DOM is much faster.
+A virtual DOM object is a representation of a DOM object, like a lightweight copy.
+
+
+
+ 
