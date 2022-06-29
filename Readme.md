@@ -3,7 +3,7 @@
 
 A repo  containing list of all questions and answers asked in Advanced Front End Development with React course provided by Coding Ninjas.
 I took the course as part of premium complete Web development Course with Backend and Front End Course in 2002.
-Started the React course on 29 Feb 2022, The questions alongwith their answers are provided lecture by lecture in very structured manner.
+Started the React course on 29 June 2022, The questions alongwith their answers are provided lecture by lecture in very structured manner.
 
 
 
