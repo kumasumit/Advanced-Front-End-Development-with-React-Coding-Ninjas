@@ -210,4 +210,185 @@ ans: 3
 Solution Description
 this.title points to the value of the title key inside the object and this.author points to the author key inside the object.
 
-12. 
+12. Student Grades
+Send Feedback
+You have to filter all the students with marks greater than the given grades. Complete the given function and return the object.
+const students = [
+  { name: 'Anjali', grade: 96 },
+  { name: 'Navdeep', grade: 84 },
+  { name: 'Varun', grade: 100 },
+  { name: 'Bhavya', grade: 65 },
+  { name: 'Shiva', grade: 90 }
+];
+
+ans: function studentGrades(grade) {
+    const students = [
+        { name: 'Anjali', grade: 96 },
+        { name: 'Navdeep', grade: 84 },
+        { name: 'Varun', grade: 100 },
+        { name: 'Bhavya', grade: 65 },
+        { name: 'Shiva', grade: 90 }
+      ];
+    //Write your code here
+    let ans = students.filter(student=>student.grade>=grade);
+    return ans;
+}
+
+
+// Input and output has already been handled for you
+
+
+process.stdin.resume();
+process.stdin.setEncoding("utf-8");
+
+let remainder = '';
+process.stdin.on('data', function (chunk) {
+    let t = parseInt(chunk);
+    let ans = studentGrades(t);
+    for(var i=0; i<ans.length; i++)
+    {
+        process.stdout.write(ans[i].name+'\n');
+    }
+    process.exit();
+});
+
+13. map(), filter(), reduce()
+Send Feedback
+Suppose you have given an array of numbers and you have to convert all the numbers into their perfect squares. Which of the following array functions are useful to accomplish this?
+ans: map
+
+Solution Description
+The map() method creates a new array with the results of calling a provided function on every element in the calling array. We can create a simple function which will multiply all the numbers inside the array with itself, and this can be done by applying the map function on the array.
+
+14. Remove Duplicates
+Send Feedback
+Remove duplicates from an array using reduce().
+Input Format: Given an array as input
+
+Output Format: Return the answer in the form of array after removing duplicates.
+
+
+
+Sample Input:
+
+a b c d a b b c d
+Sample Output:
+
+a b c d
+
+ans: function remDup(arr) {  
+    // write your code here
+   let myNonDuplicateArray = arr.reduce((acc, curr)=>{
+          if (acc.indexOf(curr) === -1) {
+    acc.push(curr);
+  }
+  return acc
+}, [])
+   return myNonDuplicateArray;
+    
+}
+
+
+
+// Input and output has already been handled for you
+
+process.stdin.resume();
+process.stdin.setEncoding("utf-8");
+
+let remainder = '';
+process.stdin.on('data', function (chunk) {
+    var arr = [];
+    var a = chunk.toString().split(' '); 
+    for(var i=0; i<a.length; i++)
+    {
+        arr.push(parseInt(a[i]));
+    }
+    ans = remDup(arr);
+    ans.sort();
+    for(var i=0; i<ans.length; i++)
+    {
+        process.stdout.write(ans[i]+' ');
+    }
+    process.exit();
+});
+
+
+15. Object destructuring in Function Arguments
+Which of the following options correctly represents the output of the following code?
+function greet({ name, greeting='hello' }) {
+  console.log(`${greeting}, ${name}!`)
+}
+const person = { name: 'Aayushi', dept: 'tech', greeting: 'Welcome'};
+greet(person);
+
+ans: Welcome, Ayushi.
+
+Solution Description
+Here, The person object is destructured. Note that while destructuring an object, the identifiers must be declared with the same key names which exist in the object (if not following the alias syntax). The variable name and greeting is assigned with the value of the key name and greeting in the person object.
+
+16. How does the arrow function differ from other functions?
+
+Solution Description
+a: The return keyword can be eliminated in the case of arrow functions. 
+c: There is no need for a function name in the case of arrow functions. 
+d: Arrow functions don't have their own "this" value. They inherit "this" from the parent function.
+
+17. Rest Parameters and Spread operator
+When we see "..." in the code, it is either rest parameters or the spread syntax. So, What is the difference between them ?
+
+ans: 
+Solution Description
+The spread operator is used to transform an array into its individual elements whereas the rest parameters are used to transform individual elements into an array. Also, the spread operator is used when calling a function whereas the rest parameters are used in the function parameters.
+
+ - When ... is at the end of function parameters, it’s “rest parameters” and gathers the rest of the list of arguments into an array.
+ - When ... occurs in a function call or alike, it’s called a “spread syntax” and expands an array into a list.
+
+The main difference between rest and spread is that the rest operator puts the rest of some specific user-supplied values into a JavaScript array. But the spread syntax expands iterables into individual elements
+
+18. Student Details
+Send Feedback
+You are given an object which has details of a particular class. Complete the function so that it returns the details of the student at i th index in the form of an array.
+Input Format: Given the index (i) of the student whose details should be printed.
+
+Output Format: An array containing name and roll no of the student.
+
+
+
+Sample Input:
+
+1
+Sample Output
+
+Bhavya
+2
+
+ans: function studentDetails(i) { 
+    var classDetails = {
+        classTeacher: 'Anjani',
+        students: [{name: "Anjali", roll: "1"}, {name: "Bhavya", roll: "2"}, {name: "Neha", roll: "3"}]
+    };
+    // write your code here here is where user writes his code
+    let students = classDetails.students;
+    let student1 = students[i];
+    let arr = Object.values(student1);
+    // console.log(arr);
+    return arr;
+    
+}
+
+
+// Input and output has already been handled for you
+
+process.stdin.resume();
+process.stdin.setEncoding("utf-8");
+
+let remainder = '';
+process.stdin.on('data', function (chunk) {
+    let t = parseInt(chunk);
+    let ans = studentDetails(t);
+    for(var i=0; i<ans.length; i++)
+    {
+        process.stdout.write(ans[i]+'\n');
+    }
+    process.exit();
+});
