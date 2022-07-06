@@ -1,0 +1,37 @@
+1. What does Babel do ?
+ans: Compiles JSX into Javascript.
+
+2. Webpack ,What does the webpack do ?
+ans: A module bundler.
+Solution Description
+Webpack is a module bundler. The main purpose is to bundle JavaScript files for usage in a browser, yet it is also capable of transforming, bundling, or packaging just about any resource or asset. 
+Further Readings: https://webpack.js.org/concepts/why-webpack/
+
+3. At most, how many default import statements can a module have ?
+ans: In one js file you can have only one export.
+
+4. Is JSX necessary to work with React ?
+ans: False.
+
+5. How do you call a function fetch() in JSX ?
+ans: {fetch()}
+
+6. Which of the following can be used to check if a user is logged in or not ?
+ans: <div>{isLoggedIn? username: "Hello World"}</div>
+
+7. Everything in react is a __________
+ans: component. 
+Solution Description
+Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. 
+
+8. Which tool is used to take JSX and convert it into createElement calls ?
+ans: Babel
+
+9. Which among the following package contains render() function that renders a react element tree to the DOM?
+ans: ReactDom
+
+10. What is the use of render() in React?
+ans: It renders a React element into the DOM in the supplied container and returns a reference to the component.
+Further Readings: https://reactjs.org/docs/rendering-elements.html
+
+
