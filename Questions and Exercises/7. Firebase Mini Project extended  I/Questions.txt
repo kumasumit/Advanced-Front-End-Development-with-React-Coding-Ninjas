@@ -1,0 +1,294 @@
+1. Predict the output of following code
+  state={
+     value:1
+  }
+  componentDidMount() {
+     console.log("Mounted")
+     this.setState({value:2})  
+  }
+  render() {
+     console.log("Rendered")
+     return (
+        <div>
+          Hi
+        <div/>
+     )
+  }
+ans: Rendered Mounted Rendered.
+
+2. Predict the output 2
+Send Feedback
+Q. Predict the output of following code
+   state={
+      value:1
+    }
+    componentDidMount() {
+       console.log("Mounted")
+       this.setState((prevState)=>{
+          return {value:prevState.value+1}
+       })
+       this.setState((prevState)=>{
+          return {value:prevState.value+1}
+       })  
+    }
+
+    render() {
+      console.log("Rendered")
+      return (
+         <div>
+          Hi
+         <div/>
+      )
+    }
+
+ans: Rendered Mounted Rendered.
+Solution Description
+Since setState causes re-render multiple setState calls are batched together and re-render happens only once. 
+
+3. Predict the output 3
+Send Feedback
+Q. Predict the output of following code
+    state={
+       value:1
+    }
+    componentDidMount() {
+
+         console.log("Mounted")
+
+         this.setState({value:2},()=>{
+              this.setState({value:3})
+         })
+
+    }
+    render() {
+       console.log("Rendered")
+       return (
+          <div>
+           {this.state.value}
+          <div/>
+       )
+    }
+ans: Rendered Mounted Rendered Rendered.
+setState callbacks always fire after rendering so it again triggers setState to cause 2nd re-render
+
+4. Prevent component from updating
+Q. Which method in a React Component should you override to stop the component from updating?
+ans: shouldComponentUpdate.
+This method is called before updating a component and if it returns false it does not update the component.
+
+5. Predict the output
+Send Feedback
+Q. Predict the output of following code
+  state={
+    value:1
+  }
+  componentDidMount() {
+     console.log("Mounted")
+
+     this.setState({value:2});
+
+     this.setState((prevState)=>{
+         return{
+             value:prevState.value+1
+         }
+     })
+  }
+
+  componentDidUpdate() {
+     console.log('Updated')
+  }
+
+  render() {
+     console.log("Rendered")
+     return (
+       <div>
+        {this.state.value}
+       <div/>
+     )
+  }
+
+ans: Rendered Mounted Rendered Updated.
+First render is called, then componentDidMount is called and after every rerender, componentDidUpdate is called. Here batching is being performed.
+
+6. Function chaining
+Send Feedback
+What is the output of the code below ?
+  function job()
+ {
+   return new Promise(function (resolve, reject)
+  {
+     reject();
+  });
+ }
+
+ let promise = job();
+
+ promise
+
+ .then(function ()
+ {
+    console.log('Success 1');
+ })
+
+ .then(function ()
+ {
+    console.log('Success 2');
+ })
+
+ .then(function ()
+ {
+    console.log('Success 3');
+ })
+
+ .catch(function ()
+ {
+    console.log('Error 1');
+ })
+
+ .then(function ()
+ {
+    console.log('Success 4');
+ });
+
+ans: Error 1, Success 4.
+Solution Description
+After job() rejects the promise, catch() is called and then the last then() is called
+
+7. Component Lifecycle Methods
+Send Feedback
+Consider you have a component which has a setTimeout() invoked inside of it, but the component can be removed even if it hasn’t completed yet. Which method should we override to stop the timer if and when the component is removed?
+ans: componentWillUnmount.
+Solution Description
+componentWillUnmount() is invoked immediately before a component is unmounted and destroyed.
+
+8. class counter {
+    constructor(initial) {
+        this.counter = initial;
+    }
+
+    increase() {
+        this.counter++;
+        return this;
+    }
+
+    decrease() {
+        this.counter--;
+        return this;
+    }
+    getCount() {
+        console.log(this.counter);
+    }
+}
+
+let c = new counter(0);
+
+c=c.increase();
+c=c.increase();
+c=c.getCount();
+c=c.increase();
+c=c.getCount();
+
+ans: 2 Error: TypeError: Cannot read property 'increase' of undefined.
+Solution Description
+getCount() does not return `this`
+
+9. Predict the output
+Send Feedback
+Consider the following component being rendered by a react app. What will the component log in the console.
+(Separate the logs of each console.log() with a space)
+import React from "react";
+
+export class Test extends React.Component {
+constructor() {
+    super();
+    this.state = {
+    value: 0
+    };
+}
+shouldComponentUpdate(nextProps,nextState) {
+    if (nextState.value > 5) return false;
+    return true;
+}
+componentDidMount() {
+    setInterval(() => {
+    this.setState((prevState) => {
+        return {
+        value: prevState.value + 1
+        };
+    });
+    });
+}
+render() {
+    console.log(this.state.value);
+    return <div></div>;
+}
+}
+ans: 0 1 2 3 4 5
+
+10. Predict the output
+Send Feedback
+class a {
+    log() {
+        console.log("a")
+        function x() {
+            return this
+        }
+        return x()
+    }
+
+    logger() {
+        console.log("b");
+        const f = () => {
+            return this
+        }
+        return f()
+    }
+}
+
+let x = new a()
+x.logger().logger().log()
+x.log().log().log().log()
+ans: b b a a Error: TypeError: Cannot read property 'log' of undefined. 
+Solution Description
+The `this` in arrow function points to its parent object but the `this` in a normal function points to itself, it does not bind to the parent scope.
+
+11. Predict the output
+Send Feedback
+Consider the following component is rendered by a react app. What will it log in the console?
+(Separate the logs of different console.log() with a space)
+import React from "react";
+
+export class Test extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      value: 0
+    };
+  }
+  shouldComponentUpdate(nextProps, nextState) {
+    if (nextState.value > 5) return false;
+    return true;
+  }
+  componentDidUpdate() {
+    console.log("->");
+  }
+  componentDidMount() {
+    setInterval(() => {
+      this.setState((prevState) => {
+        return {
+          value: prevState.value + 1
+        };
+      });
+    }, 1000);
+  }
+  render() {
+    console.log(this.state.value);
+    return <div>{this.state.value}</div>;
+  }
+}
+
+ans: 0 1 -> 2 -> 3 -> 4 -> 5 ->
+Solution Description
+componentDidUpdate() is called after every re-render of the component
+first render is called and then componentDidUpdate is called. 
+
