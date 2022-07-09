@@ -1,0 +1,59 @@
+1. Keys are given to elements in a list in React. These keys are
+ans: unique among siblings only.
+Keys used within arrays should be unique among their siblings. However, they don’t need to be globally unique.
+Read more: https://reactjs.org/docs/lists-and-keys.html
+
+2. props in react can _____
+ans: not be changed in the component. 
+Solution Description
+Whether you declare a component as a function or a class, it must never modify its own props. A component cannot update its own props but can update its state and the props of its children.
+
+3. Passing props
+Send Feedback
+Which of the following statements is correct about props?
+ans: Props in React are read-only data that can be passed and used by the various components into the application. Props are generally a static value, objects, array, or an event handler
+
+4. What are two ways data gets handled in react?
+ans: State and props.
+Solution Description
+Props and states both provide are used to set default values inside the components. They receive initial value from parent components and set initial value of child components.
+
+5. Which of the below is the correct syntax to access a property inside the props in a class components?
+ans: this.props.name.
+Solution Description
+We can access any prop from inside a component’s class using the above syntax. The ‘this.props’ is a kind of global object which stores all of a component's props. Here ‘name’, is the key of this props object.
+
+6. Which of the below is the correct syntax to access a property inside the props in a functional components?
+ans: props.name
+
+7. The _____ function creates an array of filtered data that pass a condition.
+ans: filter.
+Solution Description
+The filter() function creates an array of filtered data that pass a condition. Filter() function does not work if the array is empty and filter() function does not change the original values of an array. 
+
+8. Why are arrow functions preferred in react?
+ans: Clean syntax and less code.
+Scope safety.
+To avoid binding 'this to methods'.
+Solution Description
+Read More: 
+https://medium.com/@joespinelli_6190/using-arrow-functions-to-avoid-binding-this-in-react-5d7402eec64
+
+9. What is the declarative way to render a dynamic list of components based on values in an array.
+ans: Using the Array.map() method.
+Solution Description
+The map() function is used to iterate over an array or object and manipulate or change data items. In React, the map() function is used for rendering a list of data to the DOM.
+
+10. What will be the output of the following code?
+const cartItem = {
+  itemName: 'Apples',
+  qty: 6,
+  price: 10
+};
+const { qty=1, price } = cartItem;
+console.log("Total price of", cartItem.itemName , 'is', qty*price);
+ans: Total price of Apples is 60, the default value is only when there is no qty in cartItem 
+
+11. How can we pass the information from a component to another component which is not a direct parent, child or sibling?
+ans: Local Storage, Redux
+
