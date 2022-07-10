@@ -1,0 +1,68 @@
+1. Collections stored in a document are called sub collections. A subcollection is a collection associated with a specific document.
+
+2. Q. In which lifecycle method should you unsubscribe from your real time updates listener ?
+ams: componentWillUnMount
+Solution Description
+It is called just before unmounting the component and therefore any cleanup is done in this method
+
+3. Q. Which of the following method is used to delete a field from a particular document.
+ans: To delete specific fields from a document, use the FieldValue.delete() method when you update a document
+
+4. var citiesRef = db.collection("cities");
+
+citiesRef.doc("SF").set({
+name: "San Francisco", state: "CA", country: "USA",
+capital: false, population: 860000,
+regions: ["west_coast", "norcal"] });
+
+citiesRef.doc("LA").set({
+name: "Los Angeles", state: "CA", country: "USA",
+capital: false, population: 3900000,
+regions: ["west_coast", "east_coast"] });
+
+citiesRef.doc("DC").set({
+name: "Washington, D.C.", state: null, country: "USA",
+capital: true, population: 680000,
+regions: ["east_coast"] });
+
+citiesRef.doc("TOK").set({
+name: "Tokyo", state: null, country: "Japan",
+capital: true, population: 9000000,
+regions: ["kanto", "honshu"] });
+
+citiesRef.doc("BJ").set({
+name: "Beijing", state: null, country: "China",
+capital: true, population: 21500000,
+regions: ["jingjinji", "hebei"] });
+Predict which documents will following query return
+
+citiesRef.where('region', 'in',
+[['west_coast', 'east_coast']]);
+
+ans: DC
+This query returns every city document where the region field is an array that contains exactly one element of either west_coast or east_coast.
+
+5. Queries with range filters on different fields are not supported.
+
+Queries with a != clause are not supported. In this case, split the query into a greater-than query and a less-than query. 
+
+6. orderBy method sorts the query with the specified field by ascending order by default(can be changed)., to sort by descinding order , use desc
+
+7. What is the correct way to fire up a callback function when there is a change in the collection in the firebase?
+ans: firebase.firestore().collection('countries').onSnapshot(callback).
+The function passed into the onSnapshot method is called when any chenges occur in the collection.
+
+8. Is the following query correct?
+const q1 = citiesRef.where("state", "==", "CO").orderBy("state")
+ans: Incorrect
+Solution Description
+You can't order your query by a field included in an equality (==) or in clause.
+
+9. Is the statement correct?
+citiesRef.where("population", ">", 100000).orderBy("country");
+ans: Incorrect.
+Solution Description
+If you include a filter with a range comparison (<, <=, >, >=), your first ordering must be on the same field
+
+10. - You can use at most one in, not-in, or array-contains-any clause per query. You can't combine these operators in the same query.
+- You can't combine not-in with not equals !=
