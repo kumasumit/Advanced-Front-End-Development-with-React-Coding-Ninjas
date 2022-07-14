@@ -1,0 +1,59 @@
+1. CSS modules
+Send Feedback
+CSS modules _______
+ans: apply to the component where imported.
+Solution Description
+It is scoped by the web pack to the specific file where it is imported.
+
+2. Styled components usage
+Send Feedback
+How to style an anchor tag using styled components
+ans: styled.a`color:white`.
+
+3. Defining styled components
+Send Feedback
+Is it important to define styled components outside of the render method?
+ans: True.
+Solution Description
+It is important to define your styled components outside of the render method, otherwise it will be recreated on every single render pass. Defining a styled component within the render method will thwart caching and drastically slow down rendering speed, and should be avoided.
+
+4. Props in styled components
+Send Feedback
+How to access props in a styled component?
+ans: styled.button`background: ${props=>props.color}`
+
+5. Radium Media Queries
+Send Feedback
+The app needs to be wrapped inside which component while using media queries inside Radium?
+ans: StyleRoot.
+Solution Description
+StyleRoot wraps its children in a plain div followed by the root style sheet. Radium plugins, like keyframes and media queries, use this style sheet to inject CSS at runtime. Because the style sheet appears after your rendered elements, it is populated correctly during a server render.
+
+Further Readings: https://github.com/FormidableLabs/radium/tree/master/docs/api#styleroot-component
+
+6. Scoped css
+Send Feedback
+What is the correct name for a scoped css file?
+ans: Scope.module.css.
+Solution Description
+When any file with the same name convention is imported in a file, the webpack scopes the classes by adding a unique string in its name.
+
+7. Styled component
+Send Feedback
+Which is the correct name for a styled component?
+ans: BoxContainer.
+Solution Description
+The name should start with a capital letter.
+
+8. True or False
+Send Feedback
+Is this declaration correct or wrong?
+const styledButton = styled.button`
+    Background-color: ${(props) => {
+        if(props.primary) return 'blue'
+        else return 'red'
+    }}
+`;
+ans: Wrong
+Solution Description
+We need to use `css`  property to use multi line dynamic styling

@@ -1,0 +1,101 @@
+1. Get firebase data
+Send Feedback
+How would you get multiple documents from firestore?
+ans: db.collection("posts").get().
+Solution Description
+There are two ways to retrieve data stored in Cloud Firestore. Either of these methods can be used with documents, collections of documents, or the results of queries:
+- Call a method to get the data.
+- Set a listener to receive data-change events.
+
+Read More: https://firebase.google.com/docs/firestore/query-data/get-data
+
+2. Order by
+Send Feedback
+How to order posts by likes?
+ans: postsRef.orderBy("likes", "desc");
+Solution Description
+By default, a query retrieves all documents that satisfy the query in ascending order by document ID. You can specify the sort order for your data using orderBy().
+
+Read More: https://firebase.google.com/docs/firestore/query-data/order-limit-data
+
+3. Custom hooks
+Send Feedback
+Which of the following is a custom hook?
+ans: function useOpenPopup(){}
+Solution Description
+Name of a custom hook should always start with "use".
+
+4. Sharing state
+Send Feedback
+Do two components using the same Hook share state?
+ans: No
+Solution Description
+Custom Hooks are a mechanism to reuse stateful logic (such as setting up a subscription and remembering the current value), but every time you use a custom Hook, all state and effects inside of it are fully isolated.
+
+5. Create React App
+Send Feedback
+Which command is correct for creating a react project?
+ans: npx create-react-app foldername.
+Solution Description
+It sets up your development environment so that you can use the latest JavaScript features, provides a nice developer experience, and optimizes your app for production.  npx is a package runner tool that comes with npm 5.2+.
+
+6. Importing in React
+Send Feedback
+Which of the following is the correct syntax for importing BrowserRouter from “react-router-dom” ?
+ans: import {BrowserRouter} from "react-router-dom"
+Solution Description
+Every module can have several named parameters and in order to import one we should enclose named parameters within the curly braces.
+
+7. Exporting in React
+Send Feedback
+Which of the following syntax is correct for exporting more than one component?
+ans: export {App, Navbar, Home, CreatePost, PostDetail}
+Solution Description
+For multiple exports, we can use a comma to separate two-parameter names within the curly braces.
+
+8. React router DOM
+Send Feedback
+_________ Provides declarative, accessible navigation around your application.
+ans: <Link>
+Solution Description
+As you click around on the different s, the router renders the matching .
+Read More: https://reactrouter.com/web/api/Link
+
+9. Fill Up
+Send Feedback
+The ________________ method is used to prevent the browser from executing the default action of the selected element.
+ans: preventDefault().
+Solution Description
+The preventDefault() method cancels the event if it is cancelable, meaning that the default action that belongs to the event will not occur.
+For example, clicked anchors will not take the browser to a new URL.
+
+10. Custom Hooks
+Send Feedback
+True/False
+custom hooks improves the readability and a reduces the amount of code.
+ans: True.
+Solution Description
+Custom Hooks are a mechanism to reuse stateful logic (such as setting up a subscription and remembering the current value), but every time you use a custom Hook, all state and effects inside of it are fully isolated. So, it improves the readability and reduces the amount of code.
+
+11. Fetch data
+Send Feedback
+____________ function is used to fetch data from the firebase. Document.
+ans: onSnapshot().
+
+12. URL Parameters
+Send Feedback
+_________ hooks let you access the parameters of the current route
+ans: useParams.
+Solution Description
+In React Router, we use the word "params" to describe dynamic segments of the URL. useParams  hooks let you access the parameters of the current route.
+
+13. Which command is used for deploying a firebase-hosted application?
+ans: firebase deploy.
+11. Firebase
+Send Feedback
+Firebase is a
+ans: NoSql Database.
+Realtime Database.
+Cloud-Hosted Database.
+Solution Description
+Firebase Real-Time Database is a cloud-hosted and NoSQL database. Data is stored as JSON and synced in real-time for each connected client.

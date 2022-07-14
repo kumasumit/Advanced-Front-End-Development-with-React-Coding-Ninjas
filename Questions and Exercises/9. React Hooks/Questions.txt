@@ -82,5 +82,20 @@ ans: Whose name starts with "use"
 That may call other Hooks.
 ans a mechanism to reuse stateful logic.
 
-
-8. 
+8. Create a Custom Hook
+Send Feedback
+Create your own custom hook which toggles the text on clicking the button.
+ans: Solution Description
+    function App() {
+        const [isTextChanged, setIsTextChanged] = useToggle();
+        return (
+            {isTextChanged ? 'Toggled' : 'Click to Toggle'}
+        );
+    }
+    
+    const useToggle = (initialState = false) => {
+        const [state, setState] = useState(initialState);  
+        const toggle = useEffect(() => setState(state => !state), []);
+        return [state, toggle]
+    }
+ 

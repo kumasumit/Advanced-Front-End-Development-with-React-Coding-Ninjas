@@ -1,0 +1,36 @@
+1. Which directory?
+Send Feedback
+In which directory, the small snippets you can use throughout the application are placed?
+ans: /utils.
+Solution Description
+ It is a commonly used convention and the developer has a choice to use whatever folder structure is more meaningful in the project’s context. Some developers use “common”, “shared” or “utilities”. The most common practice is to have a util/utilities folder inside a common folder.
+
+2. Which method?
+Send Feedback
+The ____________ method converts a JavaScript object or value to a JSON string and ____________ method is used to transform a JSON string into a Javascript object.
+ans: JSON.stringify(), JSON.parse().
+Solution Description
+JSON.parse() takes a JSON string and transforms it into a JavaScript object. JSON.stringify() takes a JavaScript object and transforms it into a JSON string.
+
+3. Correct Output
+Send Feedback
+What is the correct output of the given code.
+var x='6';
+try {
+    console.log("Before throw statement");
+    if(isNaN(x)) throw "is not a number";
+    x = Number(x);
+    if(x > 5) throw "is too high";
+    console.log("After throw statement");
+  }
+  catch(err) {
+    console.log("Error caught : " + err);
+  }
+  finally {
+    console.log("I am in finally!");
+  }
+ans: Before throw statement Error caught: is too high I am in finally!.
+Solution Description
+x is a string but it is a Number so, NaN will return false and then x is converted into a number. Since, it is greater than 5 it throws an error “is too high” and the next cole.log statement does not get executed. Error is caught and a message is displayed. Then control goes to the finally keyword and then "I am in finally!" gets printed. 
+
+4. 
