@@ -1,0 +1,67 @@
+1. Reducers
+Send Feedback
+Can we have multiple reducers in an app?
+ans: True. 
+
+2. Using combineReducers
+Send Feedback
+How do we call combineReducers() method if we have two reducer functions addReducer() and subtractReducer()?
+ans: combineReducers({add: addReducer, subtract: subtractReducer})
+
+3. Thunk
+Send Feedback
+Why do we use redux thunk?
+ans: to write action creators that return a function instead of a action. 
+
+4. combineReducers
+Send Feedback
+What does combineReducers() return?
+ans: A function. 
+Solution Description
+A reducer that invokes every reducer inside the reducers object, and constructs a state object with the same shape
+
+5. Currying
+Send Feedback
+Consider the following code:
+let sum = 0
+function add (a) {
+sum += a
+console.log(sum)
+return this.add
+}
+What will the following function call log in the console?
+add(2)(3)(3)
+ans: 2 5 8
+Solution Description
+It is doing currying in the same function and logs every sum in the process
+
+6. True or False
+Send Feedback
+True or false
+applyMiddleware() can have multiple arguments
+ans: True.
+Solution Description
+Each argument is a middleware
+
+7. Thunk
+Send Feedback
+What should a thunk return?
+ans: nothing. 
+It calls the action if a function is passed as a function. 
+
+8. Multiple Middlewares
+Send Feedback
+Suppose you have multiple middlewares passed into the store. What will the next() in the last middleware refer to?
+ans: dispatch. 
+Solution Description
+Each middleware calls the next one and the las one calls the dispatch function
+
+9. Arrow functions
+Send Feedback
+Consider the following function:
+const f = () => () => () => fetch
+Is this call valid?
+f()()()(API_URL)
+ans: Yes. 
+Solution Description
+The function f()()() returns fetch function

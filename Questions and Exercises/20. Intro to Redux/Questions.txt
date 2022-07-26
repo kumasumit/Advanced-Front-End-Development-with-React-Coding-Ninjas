@@ -1,0 +1,97 @@
+1. Principles of Redux
+Send Feedback
+What are the three main principles of redux?
+ans: Cahnges are made with pure functions.
+Single Source of truth. 
+State is read-only.
+Solution Description
+Further Reading:
+https://redux.js.org/understanding/thinking-in-redux/three-principles
+
+2. Why redux is used?
+Send Feedback
+Why is Redux used?
+ans: Always Predictable
+Easily Maintainable. 
+Solution Description
+● Always Predictable: The state in redux is always predictable as a state and is immutable and can’t be changed. If the same state and actions are passed to redux always the same output comes because reducers are pure functions. 
+
+● Easily Maintainable: Redux is strict towards organising its code so it is very easy for someone who has knowledge of redux to understand the application. Hence this is why redux is easy to maintain.
+
+Further Reading:
+https://redux.js.org/tutorials/fundamentals/part-1-overview#why-should-i-use-redux 
+
+3. When should we use Redux?
+Send Feedback
+When should we use redux?
+ans: Solution Description
+You usually need redux when your app has grown to a level where it has become difficult to maintain the app state and you are looking to make it easy and simple.
+
+Further Readings:
+https://redux.js.org/tutorials/fundamentals/part-1-overview#when-should-i-use-redux
+
+4. Redux flow
+Send Feedback
+Q. Which of the following components of Redux describes how should state be changed?
+ans: Reducer. 
+Solution Description
+Actions only describe what happened, but don't describe how the application's state   changes. Reducer specifies how the application's state changes in response to actions sent to the store.
+
+5. Redux Flow
+Send Feedback
+True/False
+Redux uses a "one-way data flow" app structure.
+ans: True. 
+Solution Description
+Further Readings:
+https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow#redux-application-data-flow
+
+6. Redux is a
+Send Feedback
+Redux is a _________
+ans: Library. 
+Solution Description
+Redux is a small standalone JS library. It is a predictable state container for JavaScript apps. Redux is mostly used for application state management. In a nutshell, Redux maintains the status of the entire application in a single unchanged state tree (object), which cannot be changed directly. When anything changes, a new object is created (using actions and reducers).
+
+Further Readings:
+https://redux.js.org/tutorials/fundamentals/part-1-overview#redux-libraries-and-tools
+
+7. True/False
+Send Feedback
+True/False
+Redux cannot be used with Vanilla JavaScript, jQuery and Angular.
+ans: False.
+
+8. Redux Flow-I
+Send Feedback
+A ________ usually refers to the single state value that is managed by the store and returned by getState().
+ans: State tree. 
+Solution Description
+Further Readings:
+https://redux.js.org/understanding/thinking-in-redux/glossary#state
+
+9. React Flow-II
+Send Feedback
+An ________ is a plain object that represents an intention to change the state.
+ans: Action. 
+Solution Description
+Further Readings:
+https://redux.js.org/understanding/thinking-in-redux/glossary#action
+
+10. React Flow-III
+Send Feedback
+A _______ is an object that holds the application's state tree.
+ans: Store. 
+Solution Description
+Further Readings:
+https://redux.js.org/understanding/thinking-in-redux/glossary#store
+
+11. React Flow - IV
+Send Feedback
+____________ are functions that handle the actions and return the next state of the application.
+ans: Reducers. 
+Solution Description
+Further Readings:
+https://redux.js.org/understanding/thinking-in-redux/glossary#reducer
+
+12. 

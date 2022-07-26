@@ -1,0 +1,62 @@
+1. Create context
+Send Feedback
+How many arguments does React.createContext() take?
+ans: 0 1
+Solution Description
+It can take a single argument which is the default value. It is optional
+
+2. Context.Consumer
+Send Feedback
+what does a context consumer require as a child?
+ans: A function. 
+Solution Description
+The function receives the current context value and returns a React node.
+
+3. Connect()
+Send Feedback
+What does a connect function return?
+ans: A component. 
+Solution Description
+The wrapper component with the store passed as props
+
+4. component wrapper
+Send Feedback
+Why do we use a wrapper function?
+ans: To pass the store into props of the actual component. 
+
+5. True or False
+Send Feedback
+True or false?
+All consumers that are descendants of a Provider will re-render whenever the Provider’s value prop changes
+ans: True. 
+Solution Description
+The propagation from Provider to its descendant consumers (including .contextType and useContext) is not subject to the shouldComponentUpdate method, so the consumer is updated even when an ancestor component skips an update.
+
+6. True or False
+Send Feedback
+True or False
+Context provides a way to pass data through the component tree without having to pass props down manually at every level.
+ans: True. 
+Solution Description
+Further Readings: https://reactjs.org/docs/context.html
+
+7. connect() 2
+Send Feedback
+From which package we can import the connect() function?
+ans: react-redux. 
+
+8. connect()
+Send Feedback
+What is the use of the connect() function?
+ans: Connects a react component to a redux store. 
+
+9. Provider
+Send Feedback
+What is the use of <Provider>?
+ans: The <Provider/> makes the Redux store available to any nested components that have been wrapped in the connect() function.
+
+10. HOCs
+Send Feedback
+What are higher order components?
+ans: A component that takes another component as a argumnet and returns another function. 
+ 

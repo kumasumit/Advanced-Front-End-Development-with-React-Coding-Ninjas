@@ -1,0 +1,104 @@
+1. Pure functions
+Send Feedback
+Q. Which of the following can make a pure function impure?
+ans: Changing a shallow copy of input argument. 
+Solution Description
+Shallow copies aren’t safe from nested mutations.
+Read more here: https://www.freecodecamp.org/news/what-is-a-pure-function-in-javascript-acb887375dfe/
+
+2. Predict the output
+Send Feedback
+Q. Predict the output when state changes
+
+   componentDidMount() {
+       const { store } = this.props;
+       const unsubscribe = store.subscribe(() => {
+       store.dispatch({
+           type: "",
+       });
+     });
+   }
+ans: Stack Overflow Error. 
+Solution Description
+Calling dispatch() "without any conditions" is technically possible, however it leads to   an infinite loop as every dispatch() call usually triggers the listener again. 
+
+Q. store.subscribe()
+Send Feedback
+Q. What is the type of return value of subscribe method store.subscribe(listener) ?
+ans: function. 
+Solution Description
+   It returns a function that unsubscribes the change listener.
+
+    const unsubscribe=store.subscribe(listener)
+    unsubscribe();
+
+Q. Pure functions
+Send Feedback
+Is it a pure function or not?
+var x = 1;
+const a = () => {
+var x = 2;
+return x*100;
+}
+ans: Yes. 
+Solution Description
+It is a pure function because it doesnt rely on any global variables, the return statement uses the x from the local scope
+
+Q. Store
+Send Feedback
+Imagine the following reducer:
+const reducer = (state, action) => state
+What will be the result of creating a redux store from the following reducer like this?
+const store = createStore(reducer)
+console.log(store.getState())
+ans: Undefined. 
+Store
+Send Feedback
+Imagine the following reducer:
+const reducer = (state, action) => state
+What will be the result of creating a redux store from the following reducer like this?
+const store = createStore(reducer)
+console.log(store.getState())
+
+Q. Spread operator
+Send Feedback
+Consider the following code:
+var d = {a: 1, b: 2};
+var g = d;
+var h = {...d};
+console.log((d==g) && (d==h))
+What will be the output of the following code
+ans: False. 
+Solution Description
+d is not equal to h
+
+Q. Immutable updates
+Send Feedback
+Consider the following code:
+var d = {a: 1, b: 2};
+var h = {...d, b: 3};
+console.log(h.b) 
+What will be the output of the following code
+ans: 3. 
+Solution Description
+In order to update values immutably, your code must make copies of existing objects/arrays, and then modify the copies
+
+Further readings: https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow
+
+Q. Reducers
+Send Feedback
+What does a reducer return?
+ans: A state. 
+
+Q. Data flow
+Send Feedback
+What is the flow of the data during a change in state of the redux store
+ans: UI > action> reducer>store.
+Solution Description
+This is the conventional method followed in react applications to change the state of redux store
+
+Q. Dispatch
+Send Feedback
+What does the dispatch method return?
+ans: The dispathched action. 
+

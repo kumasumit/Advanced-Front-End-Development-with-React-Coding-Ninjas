@@ -1,0 +1,89 @@
+1. Route Issues
+Send Feedback
+Which were the two issues that needed to be resolved in the previous video?
+ans: Settings page should be private(only visible to logged in users).
+Logged in users should not see the register and log in page. 
+Solution Description
+The two issues that need to be resolved from the previous video were:
+
+- Logged in users should not see the register and log in page because they are already logged in. So, for implementing this we will be using redirect prop.
+
+- Settings page should not be visible to users who are not logged in. This can be implemented using Private Routes.
+
+2. Fragments
+Send Feedback
+Which of the following is the correct syntax for using fragments?
+ans: return(<React.Fragment><child/></React.Fragment>);
+return (<React><Child/></React>);
+
+3. Updating Profile
+In the previous video, after refreshing the page, the old name appears even after editing the profile. Why is it so ?
+ans: because the Authentication token is not updated.
+Solution Description
+The Navbar reflects the old name after refreshing because user info is extracted from Authentication Token present in local storage which contains the old user info and we were not updating the token. 
+
+4. Which Route ?
+Neha wants to create an app in which only logged-in users can access their dashboard. Which route is best suitable for this purpose ?
+ans: Private Route. 
+Solution Description
+Private Routes are the routes that are not visible to everyone and have some conditions on being displayed. For eg., a logged-in user can only access his profile page. 
+
+5. Which method?
+Send Feedback
+Which method in useHistory hook pushes a new entry onto the history stack?
+ans: push.
+
+6. Add Friends
+Send Feedback
+What happens when a user clicks on the Add Friend button?
+ans: Api call is made.
+State is updated. 
+
+7. Toast Notifications
+Send Feedback
+_________ method is used for displaying popup messages
+ans: addToast. 
+Solution Description
+Toast Notifications are popup messages that are added so as to display a message to a user. It can be a success, warning, info or error message.
+Further Readings:
+https://www.npmjs.com/package/react-toast-notifications
+https://jossmac.github.io/react-toast-notifications/
+
+8. Restricted Route
+Send Feedback
+Which of the following pages used restricted routes in Codeial Application?
+ans: Login page, Sign Up page. 
+Solution Description
+Restricted Routes are the route that can only be seen by an unauthorized user. For eg: A logged-in user will not be able to see the login-in page or sign-up page. 
+To implement this we can use prop restricted that is by default false and is present in the route component.
+
+9. Which hook?
+Send Feedback
+The ____________ hook returns the location object that represents the current URL.
+ans: useLocation. 
+Solution Description
+Locations represent where the app is now, where you want it to go, or even where it was.
+https://reactrouter.com/web/api/location
+
+10. Guess the Output
+Send Feedback
+What will be the output of the following code?
+const user = {
+id: 120,
+name: "Aayushi",
+email: "aayushi@abc.com",
+friends: [123, 124, 125]
+};
+
+function addFriend(friend) {
+    user.friends=[...user.friends, friend]
+    return;
+}
+
+addFriend(121);
+console.log(user.friends);
+ans: [123, 124, 125, 121]. 
+Solution Description
+Rest operator extracts all the friends and then at last the friend with id 121 is added. So, the output is [123, 124, 125, 121].
+
+11. 

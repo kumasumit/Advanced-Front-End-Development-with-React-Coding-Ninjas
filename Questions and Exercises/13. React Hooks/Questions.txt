@@ -1,0 +1,125 @@
+1. Using useEffect hook
+Which hook is analogous to react’s class lifecycle method componentDidMount?
+
+ans: useEffect(()=>{}, []).
+Solution Description
+The equivalent of componentDidMount in hooks is the useEffect function. Functions passed to useEffect are executed on every component rendering, unless you pass a second argument to it.
+
+2. Whats wrong with code
+Send Feedback
+What’s wrong with the code
+
+
+Class Button {
+    render () {
+        const [text, setText] = useState(‘’);
+        return <button>{text}</button>
+    }
+ }
+ans: Cant use hooks inside a class. 
+Solution Description
+Further Readings:
+https://reactjs.org/docs/hooks-faq.html#should-i-use-hooks-classes-or-a-mix-of-both
+
+3. Can I ..
+Send Feedback
+Can we use the same hook multiple times in a function?
+
+ans: true. 
+Solution Description
+The state of each component is completely independent. Hooks are a way to reuse stateful logic, not state itself. In fact, each call to a Hook has a completely isolated state. So, you can even use the same custom Hook twice in one component.
+
+4. useState returns
+What does useState returns ?
+
+ans: A Pair. 
+Solution Description
+useState hook returns the current state value and a function that lets you update it.
+
+5. useState arguments
+How many arguments are passed to useState ?
+ans: 1.
+Solution Description
+Only argument is provided to useState which is its initial state. useState lets you use local state within a function component. You pass the initial state to this function and it returns a variable with the current state value (not necessarily the initial state)
+
+6. useState Syntax
+Which of the following is the correct syntax for useState Hook ?
+ans: const[state, stateUpdaterFunction] = useState(initialStateValue).
+Solution Description
+Further Readings:
+https://reactjs.org/docs/hooks-state.html
+
+7. Guess the count
+What will be the value of count after clicking the button?
+const UpdateState = () => {
+  const [count, setCount] = useState(19)
+  const handleClick = () => setCount(count + 2)
+return (
+  <div>
+  Count value is: {count}
+      <div>
+          <button onClick={handleClick}>Increase</button>
+      </div>
+  </div>
+ )
+}
+ans: 21 
+Solution Description
+The initial value will be set to 19. And when the button is clicked, counter gets incremented by 2. Hence, The count will become 21.
+
+8. useEffect Hook Purpose
+What is the purpose of useEffect Hook ?
+ans: To invoke side effects from within functional components. 
+Solution Description
+The useEffect hook is useful to perform additional work behind the scenes without affecting the appearance of the web page.
+
+9. Dependency Array
+Send Feedback
+True/False
+If we skip the second argument (i.e, dependency array), this useEffect is called after every render.
+
+ans: True. 
+Solution Description
+It runs before the first render and after every update. But, we can customise this by passing some additional arrays. useEffect runs after every update because every action requires newly updated data.
+
+10. Hook Rules
+Which of the following statement is incorrect about react hooks ?
+ans: We can call a Hook from a regular function.
+Solution Description
+Don’t call Hooks from regular JavaScript functions. Instead, you can:
+- > Call Hooks from React function components.
+- > Call Hooks from custom Hooks.
+
+By following this rule, you ensure that all stateful logic in a component is clearly visible from its source code.
+
+11. Additional Hooks
+Which of the following is not an example of react hook ?
+ans: useCondition. 
+Solution Description
+useRef, useReducer, useLayoutEffect, useCallback are additional hooks which are either variants of the basic ones, or only needed for specific edge cases. 
+
+12. Custom Hooks
+A custom Hook is a JavaScript function
+ans: Whose name starts with "use"
+That may call other Hooks.
+And a mechanism to refuse stateful logic.
+Solution Description
+Further Readings: https://reactjs.org/docs/hooks-custom.html
+
+13. Create a Custom Hook
+Send Feedback
+Create your own custom hook which toggles the text on clicking the button.
+ans: Solution Description
+    function App() {
+        const [isTextChanged, setIsTextChanged] = useToggle();
+        return (
+            {isTextChanged ? 'Toggled' : 'Click to Toggle'}
+        );
+    }
+    
+    const useToggle = (initialState = false) => {
+        const [state, setState] = useState(initialState);  
+        const toggle = useEffect(() => setState(state => !state), []);
+        return [state, toggle]
+    }
+ 

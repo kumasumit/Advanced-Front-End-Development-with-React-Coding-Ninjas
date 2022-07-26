@@ -1,0 +1,59 @@
+1. Creating Post Logic
+Send Feedback
+Which of the following problem was not resolved in the previous video?
+ans: Newly added post was not visible as soon as it was added. 
+Solution Description
+New posts should be added to the and setPosts function should be called so that the whole UI automatically gets rerendered after a new post is added. So, we will make this post global in the next video.
+
+2. What is context?
+Send Feedback
+What is Context?
+ans: Solution Description
+Context provides a way to pass data through the component tree without having to pass props down manually at every level. Context is designed to share data that can be considered “global” for a tree
+
+For example, authenticated user, locale preference, UI theme need to be accessed in the application by many components.
+     
+    const {Provider, Consumer} = React.createContext(defaultValue)
+
+3. Error in the code
+Send Feedback
+What is the error in the code given below?
+<ul>
+      {results.map((user) => (
+        <li
+          className={styles.searchResultsRow}
+        >
+          <Link to={`/user/${user._id}`}>
+            <img
+              src="https://image.flaticon.com/icons/svg/2154/2154651.svg"
+              alt="user"
+            />
+            <span>{user.name}</span>
+          </Link>
+        </li>
+      ))}
+</ul>
+ans: Key is missing. 
+Solution Description
+Key is not present as one of the props. So, it will show a warning. Keys help React identify which items have changed, are added, or are removed. Keys should be given to the elements inside the array to give the elements a stable identity. Keys used within arrays should be unique among their siblings.
+
+    
+
+          {results.map((user) => (
+            
+
+              
+                user
+                {user.name}
+              
+            
+
+          ))}
+
+4. Context API
+Send Feedback
+_________________ creates a Context object. When React renders a component that subscribes to this Context object it will read the current context value from the closest matching Provider above it in the tree.
+ans: createContext.
+Further Readings:
+https://reactjs.org/docs/context.html#reactcreatecontext
+

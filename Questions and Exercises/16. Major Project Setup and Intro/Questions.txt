@@ -5,10 +5,9 @@ ans: /utils.
 Solution Description
  It is a commonly used convention and the developer has a choice to use whatever folder structure is more meaningful in the project’s context. Some developers use “common”, “shared” or “utilities”. The most common practice is to have a util/utilities folder inside a common folder.
 
-2. Which method?
-Send Feedback
+2. Which method ?
 The ____________ method converts a JavaScript object or value to a JSON string and ____________ method is used to transform a JSON string into a Javascript object.
-ans: JSON.stringify(), JSON.parse().
+ans: JSON.stringify().JSON.parse(). 
 Solution Description
 JSON.parse() takes a JSON string and transforms it into a JavaScript object. JSON.stringify() takes a JavaScript object and transforms it into a JSON string.
 
@@ -33,35 +32,65 @@ ans: Before throw statement Error caught: is too high I am in finally!.
 Solution Description
 x is a string but it is a Number so, NaN will return false and then x is converted into a number. Since, it is greater than 5 it throws an error “is too high” and the next cole.log statement does not get executed. Error is caught and a message is displayed. Then control goes to the finally keyword and then "I am in finally!" gets printed. 
 
-4. Props Validation
+4. Correct Statement
+Which of the following statements is/are true ?
+ans:
+Async makes sure that a promise is returned and if it is not returned then javascript automatically wraps it in a promise which is resolved with its value. 
+Await makes the code wait until the promise returns a result. It only makes the async block wait.
+Promises can be consumed by registering functions using .then and .catch methods. then() is invoked when a promise is either resolved or rehected.
+Solution Description
+The await keyword is only valid inside async functions within regular JavaScript code. If you use it outside of an async function's body, you will get a SyntaxError 
+
+5. CSS modules
+A CSS Modules is a CSS file
+ans: In which all class names and animation names are scoped locally by default.
+     In which class names are dynamically generated, unique and mapped to the correct styles.
+     Which prevents name conflicts and lets you use the same css class name in name different 
+     files.
+     
+
+6. Props Validation
 Send Feedback
 Which package is needed for Props validation?
-ans: Prop Types.
+ans: Prop Types. 
 Solution Description
 We are using props as arguments at every for passing things from parent component to child component. So, there is a need of validating props and this purpose is solved by prop type. Prop type basically checks that the prop that is being passed is validated or not.
 Documentation: https://www.npmjs.com/package/prop-types
 
-5.HTTP Method
+7. HTTP Method
 Send Feedback
 Which of the following is not a HTTP method?
-ans: REMOVE
+ans: REMOVE-Delete.
 Solution Description
 REMOVE is not a HTTP method. The primary or most-commonly-used HTTP methods are POST, GET, PUT, PATCH, and DELETE. These correspond to create, read, update, and delete (or CRUD) operations, respectively.
 
-6. Authentication
+8. Authentication
 Send Feedback
 __________________ are created by an authentication service and contain information that enables a user to verify their identity without entering login credentials.
-ans: Authentication Tokens.
+ans: Authentication tokens.
 Solution Description
 API keys are for projects, authentication is for users.
 API keys identify the calling project the application or site making the call to an API whereas Authentication tokens identify a user the person that is using the app or site.
 
-7. The _________ method returns the value of the specified Storage Object item.
+9. Which method ?
+The _________ method returns the value of the specified Storage Object item.
 ans: getItem().
 Solution Description
 The getItem() method of the Storage interface, when passed a key name, will return that key's value, or null if the key does not exist, in the given Storage object.
 
-8. What is a Callback?
+10. Callbacks
+What is a Callback ?
 ans: Solution Description
 A callback is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of action.
-  
+
+11. Promises
+Select the incorrect statement.
+Promises based on time events are classified as follows:
+ans:
+Rejected when the promise does not return the correct result.
+Settles/Resolved after  the event happens.
+Fulfilled: when the promise returns the correct result. 
+Solution Description
+A promise is Fulfilled when the promise returns the correct result and Rejected when the promise does not return the correct result.
+
+12. 

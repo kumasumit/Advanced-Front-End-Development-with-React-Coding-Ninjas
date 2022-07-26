@@ -1,0 +1,61 @@
+1. React Routes
+Which component should the Routes be wrapped inside to avoid rendering multiple renderings on a single route ?
+ans: Switch. 
+Solution Description
+switch avoids rendering multiple components inside a router
+
+2. Auth in SPAs
+Which of the following authentication methods is used by SPAs ?
+ans: Stateless
+Solution Description
+State less authentication uses tokens to verify users instead of session Ids. It is considered the most optimal choice of authentication for SPAs
+
+3. Context API
+True or False?
+The Context in react is used to share data between nested components without passing it as props.
+ans: True. 
+
+4. Switch Routes
+Which component should be used to switch a route on a click ?
+ans: Link
+Solution Description
+Link component can switch to the route mentioned in the `to` property
+
+5. Auth
+What is exchanged between the client and server in stateless authentication ?
+ans: JWT.
+Solution Description
+JWT token consists of data of the user
+
+6. React context
+Send Feedback
+Consider the following statement:
+const theme = React.createContext();
+What would the following statements log after the execution of this statement?
+const {primary} = React.useContext(theme);
+console.log(theme);
+ans: It will give an error. 
+Solution Description
+ It will give an error because, useContext will return the default value which in this case is undefined and we are trying to destructure undefined
+
+7. JWT in react
+Send Feedback
+Where are the jwt tokens stored on the client?
+ans: Local Storage. 
+Solution Description
+It is accessible everywhere if it is stored in localStorage
+
+8. Local storage
+Send Feedback
+Which is a wrong function call among the following?
+ans: localStorage.removeItem(key, value).
+Solution Description
+removeItem() only takes key as an argument
+
+9. User data
+Send Feedback
+Where is the user data stored after decoding it from the token?
+ans: React State. 
+Solution Description
+It cant be stored on the localStorage or redux due to security issues
+
